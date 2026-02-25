@@ -11,16 +11,12 @@ import {
   GraduationCap,
   Activity,
   Search,
-  ChevronRight,
   ShieldCheck,
   Check,
   ArrowRight,
   MapPin,
-  Stethoscope,
   Microscope,
-  Baby,
   BrainCircuit,
-  HeartPulse,
 } from "lucide-react";
 
 const fadeInUp = {
