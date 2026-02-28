@@ -18,6 +18,7 @@ import {
   Microscope,
   BrainCircuit,
 } from "lucide-react";
+import logo from "./assets/logo.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -59,7 +60,7 @@ const FeatureItem = ({
   text: string;
 }) => (
   <li className="flex items-start gap-3">
-    <div className="mt-1 flex-shrink-0">{icon}</div>
+    <div className="mt-1 shrink-0">{icon}</div>
     <span className="text-slate-700">{text}</span>
   </li>
 );
@@ -90,12 +91,12 @@ const PricingCard = ({
         <span className="text-slate-500">/project</span>
       )}
     </div>
-    <div className="flex-grow">
+    <div className="grow">
       <ul className="space-y-4">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3 text-sm text-slate-700">
             <Check
-              className={`w-5 h-5 flex-shrink-0 ${highlighted ? "text-blue-600" : "text-slate-400"}`}
+              className={`w-5 h-5 shrink-0 ${highlighted ? "text-blue-600" : "text-slate-400"}`}
             />
             <span>{feature}</span>
           </li>
@@ -117,10 +118,8 @@ function App() {
       <nav className="fixed z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <div className="flex flex-shrink-0 items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
-                <Activity className="h-5 w-5 text-white" />
-              </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <img src={logo} alt="Logo" className="h-10 w-10 object-contain" />
               <span className="text-xl font-bold text-slate-800">
                 Chang Puak Platform
               </span>
@@ -160,8 +159,8 @@ function App() {
 
       {/* Hero Section */}
       <header className="relative overflow-hidden pb-20 pt-32 lg:pb-32 lg:pt-48">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
-        <div className="absolute right-0 top-0 -z-10 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/2 rounded-full bg-blue-100/50 blur-3xl" />
+        <div className="bg-linear-to-br absolute inset-0 -z-10 from-blue-50 via-white to-indigo-50" />
+        <div className="h-200 w-200 absolute right-0 top-0 -z-10 -translate-y-1/2 translate-x-1/2 rounded-full bg-blue-100/50 blur-3xl" />
 
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
@@ -180,8 +179,8 @@ function App() {
             <p className="mx-auto mb-10 mt-4 max-w-3xl text-xl text-slate-600">
               Connecting leading institutions like{" "}
               <span className="font-semibold text-slate-800">Khon Kaen U.</span>{" "}
-              and <span className="font-semibold text-slate-800">Siriraj</span>{" "}
-              to accelerate discovery through synthetic data, AI models, and
+              and <span className="font-semibold text-slate-800">KMITL</span> to
+              accelerate discovery through synthetic data, AI models, and
               collaborative research.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -215,7 +214,7 @@ function App() {
               <WorkflowStep
                 icon={<Building2 className="h-10 w-10 text-blue-600" />}
                 title="Data Sources"
-                description="Secure integration with Khon Kaen U. and Siriraj Hospital."
+                description="Secure integration with Khon Kaen U. and KMITL."
               />
               <WorkflowStep
                 icon={<Database className="h-10 w-10 text-indigo-600" />}
@@ -318,7 +317,7 @@ function App() {
                 />
               </ul>
             </div>
-            <div className="order-1 flex h-[400px] items-center justify-center rounded-2xl bg-gradient-to-br from-green-50 to-emerald-100 p-8 lg:order-2">
+            <div className="h-100 bg-linear-to-br order-1 flex items-center justify-center rounded-2xl from-green-50 to-emerald-100 p-8 lg:order-2">
               <div className="relative">
                 <div className="absolute inset-0 animate-pulse rounded-full bg-green-200 opacity-30 blur-3xl"></div>
                 <Globe2
@@ -334,7 +333,7 @@ function App() {
             className="mb-24 grid grid-cols-1 items-center gap-16 lg:grid-cols-2"
             id="cohort"
           >
-            <div className="flex h-[400px] items-center justify-center rounded-2xl bg-gradient-to-br from-orange-50 to-amber-100 p-8">
+            <div className="h-100 bg-linear-to-br flex items-center justify-center rounded-2xl from-orange-50 to-amber-100 p-8">
               <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-xl">
                 <div className="mb-4 flex items-center gap-4 border-b border-gray-100 pb-4">
                   <Users className="text-orange-600" size={32} />
@@ -431,7 +430,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="order-1 flex h-[400px] items-center justify-center rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-100 p-8 lg:order-2">
+            <div className="h-100 bg-linear-to-br order-1 flex items-center justify-center rounded-2xl from-purple-50 to-indigo-100 p-8 lg:order-2">
               <div className="relative text-center">
                 <div className="absolute right-0 top-0 animate-bounce delay-75">
                   <div className="rounded-lg bg-white p-2 text-xs font-bold text-purple-600 shadow-lg">
@@ -459,9 +458,7 @@ function App() {
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-blue-500/20 p-3">
             <Bot size={32} className="text-blue-400" />
           </div>
-          <h2 className="mb-6 text-3xl font-bold md:text-5xl">
-            Minimal AI Assistant
-          </h2>
+          <h2 className="mb-6 text-3xl font-bold md:text-5xl">AI Assistant</h2>
           <p className="mb-8 text-xl text-blue-200">
             Powered by Deep Learning and NLP for social analysis. Get instant
             summaries and insights from complex datasets.
@@ -523,7 +520,7 @@ function App() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-blue-600">
-                    Siriraj Hospital
+                    KMITL
                   </a>
                 </li>
                 <li>
